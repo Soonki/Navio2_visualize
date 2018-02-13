@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot name="simple">
+  <link name="base_link">
+    <visual>
+      <geometry>
+         <box size="0.06 0.06 0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="green">
+        <color rgba="0 .8 0 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link name="cross1">
+    <visual>
+      <geometry>
+         <box size="0.29 0.01 0.005"/>
+      </geometry>
+      <origin rpy="0 0 0.785398" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+  <link name="cross2">
+    <visual>
+      <geometry>
+         <box size="0.29 0.01 0.005"/>
+      </geometry>
+      <origin rpy="0 0 -0.785398" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_cross1" type="fixed">
+       <parent link="base_link"/>
+       <child link="cross1"/>
+       <origin xyz="0 0 0"/>
+  </joint>
+
+  <joint name="base_to_cross2" type="fixed">
+       <parent link="base_link"/>
+       <child link="cross2"/>
+       <origin xyz="0 0 0"/>
+  </joint>
+</robot>

@@ -1,0 +1,5 @@
+<launch>
+        <param name="robot_description" command="cat $(find visualize)/urdf/simple.urdf" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+        <node name="visual_test_ver2" pkg="visualize" type="visual_test_ver2.py" />
+</launch>
